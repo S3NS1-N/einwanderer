@@ -8,13 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Plaser extends Player
 {
-    private boolean positionlock;
-
     public Plaser(){
-        //getImage().setTransparency(0);
         
-        //Variable to get shot in position first
-        positionlock = true;
     }
     /**
      * Act - do whatever the Plaser wants to do. This method is called whenever
@@ -22,6 +17,14 @@ public class Plaser extends Player
      */
     public void act()
     {
-        setLocation(getX(), getY() - 8);
+        setLocation(getX(), getY() - 2);
+        checkEdgeContact();
+        
+    }
+    
+    private void checkEdgeContact(){
+        if (isAtEdge()){
+            getWorld().removeObject(this);
+        }
     }
 }

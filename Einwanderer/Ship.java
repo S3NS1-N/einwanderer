@@ -27,10 +27,10 @@ public class Ship extends Player {
     }
     private void control(){
         if (Greenfoot.isKeyDown("a")) {
-            setLocation(getX() - 7, getY());
+            setLocation(getX() - 2, getY());
         } 
         if (Greenfoot.isKeyDown("d")) {
-            setLocation(getX() + 7, getY());
+            setLocation(getX() + 2, getY());
         }
         /*if (Greenfoot.isKeyDown("w")) {
             setLocation(getX(), getY()-4);
@@ -42,7 +42,7 @@ public class Ship extends Player {
     private void fire(){
         if (Greenfoot.isKeyDown("space") && lastShotTime + cooldown <= getTime()){
             Plaser laser = new Plaser();
-            getWorld().addObject(laser,getX(), getY());
+            getWorld().addObject(laser,getX(), getY() - 2);
             lastShotTime = getTime();
             
             shot.play();
