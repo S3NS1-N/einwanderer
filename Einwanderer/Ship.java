@@ -9,12 +9,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Ship extends Player {
     
     private int cooldown;
-    private int lastShotTime;
+    private long lastShotTime;
     private GreenfootSound shot = new GreenfootSound("laser.mp3");
     
     public Ship(){
-        lastShotTime = -2;
-        cooldown = 2;
+        lastShotTime = -300;
+        cooldown = 300;
     }
     /**
      * Act - do whatever the Ship wants to do. This method is called whenever
@@ -23,13 +23,14 @@ public class Ship extends Player {
     public void act()
     {
         control();
+        fire();
     }
     private void control(){
         if (Greenfoot.isKeyDown("a")) {
-            setLocation(getX() - 5, getY());
+            setLocation(getX() - 7, getY());
         } 
         if (Greenfoot.isKeyDown("d")) {
-            setLocation(getX() + 5, getY());
+            setLocation(getX() + 7, getY());
         }
         /*if (Greenfoot.isKeyDown("w")) {
             setLocation(getX(), getY()-4);
@@ -39,8 +40,8 @@ public class Ship extends Player {
         }*/
     }
     private void fire(){
-        if (lastShotTime + cooldown <= getTime()){
-            plaser laser = new plaser();
+        if (Greenfoot.isKeyDown("space") && lastShotTime + cooldown <= getTime()){
+            Plaser laser = new Plaser();
             getWorld().addObject(laser,getX(), getY());
             lastShotTime = getTime();
             

@@ -16,7 +16,7 @@ public class Player extends Actor
     {
         // Add your action code here.
     }
-    public int getTime(){
-        return 0;
+    public long getTime(){
+        return System.currentTimeMillis();
     }
 }
