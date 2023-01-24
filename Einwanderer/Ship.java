@@ -13,8 +13,8 @@ public class Ship extends Player {
     private GreenfootSound shot = new GreenfootSound("laser.mp3");
     
     public Ship(){
-        lastShotTime = -300;
-        cooldown = 300;
+        lastShotTime = -1200;
+        cooldown = 1200;
     }
     /**
      * Act - do whatever the Ship wants to do. This method is called whenever
@@ -32,12 +32,6 @@ public class Ship extends Player {
         if (Greenfoot.isKeyDown("d")) {
             setLocation(getX() + 2, getY());
         }
-        /*if (Greenfoot.isKeyDown("w")) {
-            setLocation(getX(), getY()-4);
-        } */
-        /*if (Greenfoot.isKeyDown("s")) {
-            setLocation(getX(), getY()+4);
-        }*/
     }
     private void fire(){
         if (Greenfoot.isKeyDown("space") && lastShotTime + cooldown <= getTime()){
