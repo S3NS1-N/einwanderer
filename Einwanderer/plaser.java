@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Plaser extends Player
+public class Plaser extends Actor
 {
     public Plaser(){
         
@@ -19,12 +19,11 @@ public class Plaser extends Player
     {
         setLocation(getX(), getY() - 2);
         checkEdgeContact();
-        
     }
     
     private void checkEdgeContact(){
         if (isAtEdge()){
             getWorld().removeObject(this);
-        }
+        } 
     }
 }

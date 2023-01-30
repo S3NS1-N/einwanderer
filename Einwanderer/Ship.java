@@ -24,6 +24,7 @@ public class Ship extends Player {
     {
         control();
         fire();
+        checkForLaserContact();    
     }
     private void control(){
         if (Greenfoot.isKeyDown("a")) {
@@ -41,5 +42,19 @@ public class Ship extends Player {
             
             shot.play();
         }
+    }
+    private void checkForLaserContact(){
+        if (isTouching(Alaser.class)){
+            removeTouching(Alaser.class);
+            deathAnimation();
+            getWorld().removeObject(this);
+        }
+    }
+    
+    private void deathAnimation(){
+        setImage("shipExplosion0.png");  
+        Greenfoot.delay(50);
+        setImage("shipExplosion1.png");  
+        Greenfoot.delay(50);
     }
 }
