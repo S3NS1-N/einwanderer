@@ -36,13 +36,12 @@ public class EinwandererOne extends Einwanderer
     
     public void act()
     {
-        
         if (lastMoveTime + getMovementDelay(wave) <= getTime()){
             setImage(image2);
             moveSideToSide(minXMovement,maxXMovement);
             lastMoveTime = getTime();
         } else if (lastShotTime + 800 <= getTime()){
-            checkShotAndShoot(4);
+            checkShotAndShoot(9 - wave);
             lastShotTime = getTime();
         }   
         if (lastMoveTime + 400 <= getTime()){

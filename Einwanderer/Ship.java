@@ -38,7 +38,7 @@ public class Ship extends Player {
         if (Greenfoot.isKeyDown("space") && lastShotTime + cooldown <= getTime()){
             Plaser laser = new Plaser();
             getWorld().addObject(laser,getX(), getY() - 2);
-            lastShotTime = getTime();
+            //lastShotTime = getTime();
             
             shot.play();
         }
@@ -52,6 +52,7 @@ public class Ship extends Player {
     }
     
     private void deathAnimation(){
+        Greenfoot.playSound("shipExplosion.wav");
         setImage("shipExplosion0.png");  
         Greenfoot.delay(50);
         setImage("shipExplosion1.png");  

@@ -21,6 +21,9 @@ public class Space extends World
     
     private ArrayList<SimpleActor> lifeCounter = new ArrayList<SimpleActor>();
     private SimpleActor lifeDisplay = new SimpleActor();
+    private SimpleActor display = new SimpleActor();
+    
+    private SimpleActor waveDisplay = new SimpleActor();
     
     /**
      * Constructor for objects of class MyWorld.
@@ -38,13 +41,14 @@ public class Space extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(255, 200, 3);
-        wave = this.wave;
+        this.wave = wave;
         
         prepare();
     }
     
     public void act(){
-        checkForPlayerDeath();      
+        checkForPlayerDeath();
+        checkForNextWave();
     }
     
     private void prepare(){
@@ -52,6 +56,9 @@ public class Space extends World
         AlienSpawnControl();
         setupLifeCounter();
         stopAllAction = false;
+        
+        waveDisplay.setImage(new GreenfootImage("Wave: " + (wave + 1), 25, Color.WHITE, Color.BLACK));
+        addObject(waveDisplay, 240, 5);
     }
     
     private void AlienSpawnControl(){
@@ -97,7 +104,12 @@ public class Space extends World
     private void checkForPlayerDeath(){
         if (getObjects(Ship.class).size() == 0){
             if (playerLives == 0){
-                //Game Over
+                display.setImage(new GreenfootImage("Game Over", 100, Color.RED, Color.BLACK));
+                removeObjects(getObjects(Alaser.class));
+                removeObjects(getObjects(Plaser.class));
+                addObject(display, 126, 100);
+                Greenfoot.delay(10);
+                Greenfoot.stop();
             } else{
                 playerLives -= 1;
                 refreshLifeCounter();               
@@ -111,13 +123,19 @@ public class Space extends World
         removeObjects(getObjects(Alaser.class));
         removeObjects(getObjects(Plaser.class));
         addObject(new Ship(), 125, 180);
-        Greenfoot.delay(40);
+        Greenfoot.delay(10);
     }
     
     private void refreshLifeCounter(){
         if (playerLives != lifeCounter.size()){
             removeObject(lifeCounter.get(lifeCounter.size()-1));
             lifeCounter.remove(lifeCounter.get(lifeCounter.size()-1));
+        }
+    }
+    
+    private void checkForNextWave(){
+        if (getObjects(Einwanderer.class).size() == 0){ 
+            Greenfoot.setWorld(new Space(wave + 1));
         }
     }
 }

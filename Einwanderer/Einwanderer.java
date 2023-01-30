@@ -26,12 +26,17 @@ public class Einwanderer extends Actor
     public void checkforLaserContact(){
         if (isTouching(Plaser.class)){
             removeTouching(Plaser.class);
+            
+            setImage("invaderExplosion.png");
+            Greenfoot.playSound("invaderDestroyedSound.wav");
+            
+            Greenfoot.delay(2);
             getWorld().removeObject(this);
         }
     }
     
     public void checkShotAndShoot(int chance){
-        if (getObjectsAtOffset(0, 20, Einwanderer.class).size() == 0 && getObjectsAtOffset(10 * leftOrRight, 20, Einwanderer.class).size() == 0 && Greenfoot.getRandomNumber(chance * 4) == 1){
+        if (getObjectsAtOffset(0, 20, Einwanderer.class).size() == 0 && getObjectsAtOffset(10 * leftOrRight, 20, Einwanderer.class).size() == 0 && Greenfoot.getRandomNumber(chance) == 1){
             Alaser laser = new Alaser();
             getWorld().addObject(laser,getX(), getY() + 2);
         }
@@ -46,7 +51,7 @@ public class Einwanderer extends Actor
     }
     
     public int getMovementDelay(int wave){
-        return movementDelay - (wave * 500);
+        return movementDelay - (wave * 800);
     }
     
     public long setFirstMovementDelay(int row){

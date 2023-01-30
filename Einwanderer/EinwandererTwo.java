@@ -39,7 +39,7 @@ public class EinwandererTwo extends Einwanderer
             moveSideToSide(minXMovement, maxXMovement);
             lastMoveTime = getTime();
         } else if (lastShotTime + 600 <= getTime()){
-            checkShotAndShoot(3);
+            checkShotAndShoot(8 - wave);
             lastShotTime = getTime();
         }
         if (lastMoveTime + 400 <= getTime()){
