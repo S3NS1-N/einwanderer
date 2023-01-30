@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=Einwanderer
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Einwanderer\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=minXMovement\ maxXMovement
+comment1.target=void\ moveSideToSide(int,\ int)
+comment2.params=
+comment2.target=void\ checkforLaserContact()
+comment3.params=chance
+comment3.target=void\ checkShotAndShoot(int)
+comment4.params=
+comment4.target=boolean\ checkforStopCommand()
+comment5.params=minXMovement
+comment5.target=int\ getMaxXMovement(int)
+comment6.params=
+comment6.target=long\ getTime()
+comment7.params=wave
+comment7.target=int\ getMovementDelay(int)
+comment8.params=row
+comment8.target=long\ setFirstMovementDelay(int)
+numComments=9

@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Ship
+comment0.text=\r\n\ This\ class\ is\ the\ space-ship\ that\ the\ player\ controls\ and\ fires\ on\ the\ invaders\ with.\ Controls\ with\ A\ and\ D,\ Space\ to\ fire.\r\n\ \r\n\ @author\ Oliver\ Ammann\r\n\ @version\ 3.0\r\n
+comment1.params=
+comment1.target=Ship()
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Actor\ method\ controls\ all\ the\ movement\ and\ lets\ the\ player\ fire\ and\ also\ checks\ for\ contact\ with\ alien-laser.\r\n
+comment3.params=
+comment3.target=void\ control()
+comment4.params=
+comment4.target=void\ fire()
+comment5.params=
+comment5.target=void\ checkForLaserContact()
+comment6.params=
+comment6.target=void\ deathAnimation()
+numComments=7
