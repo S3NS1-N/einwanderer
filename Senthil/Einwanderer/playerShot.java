@@ -1,7 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Alaser: Player-Laser Class - Just moves and checks for edge collisions
+ * This class inherits from Actor class.
+ * Checks if the bullet's touching the edge and moves forward.
  * 
  * @author Senthil Nagendran
  * @version 1.2
@@ -12,8 +13,8 @@ public class playerShot extends Actor
         
     }
     /**
-     * Act - do whatever the Plaser wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * This method is called when the 'Act' or 'Run' button 
+     * is pressed in the environment.
      */
     public void act()
     {

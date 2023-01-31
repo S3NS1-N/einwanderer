@@ -1,37 +1,38 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Parent Class for all "Invaders". Contains common functions that all invaders use, like moving and shooting.
+ * Parent Class for all enemys. Contains common functions that all aliens use. For example: moving and shooting.
+ * Inherits from Actor class.
  * 
  * @author Senthil Nagendran
  * @version 1.2
  */
 public class Alien extends Actor
 {
-    private int leftOrRight = 1;
+    private int alienDirection = 1;
     private int stepSize = 6;
     private int maxMovementSpace = 60;
-    
     private int movementDelay = 2500;
     
     /**
-     * This method moves the invaders from side to side and checks if the reached the maximum or minimum X Coordinate and move one row down and change direction.
+     * This method moves the aliens from side-to-side, checks if they reached the end (max or min X Coordinate)
+     * and moves them one row down and changes their direction.
      * @param minXMovement The start / minimum Position of the invader.
      * @param maxXMovement The maximum X Coordinate of the invader (minXMovement + 60).
      */
-    public void moveSideToSide(int minXMovement, int maxXMovement) {
-        if ((getX() == maxXMovement && leftOrRight == 1) || (getX() == minXMovement && leftOrRight == -1)){
+    public void alienMovement(int minXMovement, int maxXMovement) {
+        if ((getX() == maxXMovement && alienDirection == 1) || (getX() == minXMovement && alienDirection == -1)){
             setLocation(getX(), getY() + 20);
-            leftOrRight *= -1;
+            alienDirection *= -1;
         } else {
-            setLocation(getX() + stepSize * leftOrRight, getY());
+            setLocation(getX() + stepSize * alienDirection, getY());
         }
     }
     
     /**
-     * This method checks for contact with player-laser-shot and removes the invader if necessary.
+     * This method checks if the enemy got hit by a bullet and removes the alien if necessary.
      */
-    public void checkforLaserContact(){
+    public void checkforShotContact(){
         if (isTouching(playerShot.class)){
             removeTouching(playerShot.class);
             
@@ -44,17 +45,17 @@ public class Alien extends Actor
     }
     
     /**
-     * This method checks if an Invader is able to shoot (randomized) and fires if true.
+     * This method checks if an alien is able to shoot (randomized) and fires if true.
      */
     public void checkShotAndShoot(int chance){
-        if (getObjectsAtOffset(0, 20, Alien.class).size() == 0 && getObjectsAtOffset(10 * leftOrRight, 20, Alien.class).size() == 0 && getObjectsAtOffset(10 * leftOrRight, 40, Alien.class).size() == 0 && Greenfoot.getRandomNumber(chance) == 1){
-            enemyShot laser = new enemyShot();
-            getWorld().addObject(laser,getX(), getY() + 2);
+        if (getObjectsAtOffset(0, 20, Alien.class).size() == 0 && Greenfoot.getRandomNumber(chance) == 1){
+            enemyShot shot = new enemyShot();
+            getWorld().addObject(shot,getX(), getY() + 2);
         }
     }
 
     /**
-    * This method returns the maximum X coordinate with the help of the start X position.
+    * This method returns the maximum X coordinate with the help of the start position.
     */
     public int getMaxXMovement(int minXMovement){
         return maxMovementSpace + minXMovement;
@@ -68,14 +69,17 @@ public class Alien extends Actor
     }
     
     /**
-    * This method returns the movement delay of the wave for the invaders.
+    * This method returns the movement delay of the wave for the aliens.
+    * @return movement delay of the wave 
     */
     public int getMovementDelay(int wave){
         return movementDelay - (wave * 800);
     }
     
     /**
-    * This method returns the first movement delay for each row of invaders (they move a little async)
+    * This method returns the first movement delay for each row of aliens.
+    * Each row moves with a certain offset to the previous one.
+    * @return Movement-delay for each row
     */
     public long setFirstMovementDelay(int row){
         return getTime() - (row * 100);

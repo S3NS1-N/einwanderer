@@ -3,5 +3,5 @@ comment0.target=Player
 comment0.text=\r\n\ Parent\ class\ of\ playerjet.\ Contains\ useful\ functions\ for\ the\ player\ class.\ \r\n\ \r\n\ @author\ Senthil\ Nagendran\r\n\ @version\ 1.2\r\n
 comment1.params=
 comment1.target=long\ getTime()
-comment1.text=\r\n\ Returns\ the\ current\ time\ in\ milliseconds\r\n
+comment1.text=\r\n\ @return\ Returns\ the\ current\ time\ in\ milliseconds\r\n
 numComments=2

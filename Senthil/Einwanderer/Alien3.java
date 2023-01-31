@@ -1,7 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * This class is the class of the third kind of invader. It just contains the act() method and mainly utilises methods from the parent class
+ * This class is for the squid alien.
+ * Only contains the act() method and mainly utilises methods from the parent class.
  * 
  * @author Senthil Nagendran
  * @version 1.2
@@ -12,16 +13,16 @@ public class Alien3 extends Alien
     private long lastShotTime;
     private int minXMovement;
     private int maxXMovement;
-    private int fireChance;
-    
     private int wave;
     
     private GreenfootImage image1 = new GreenfootImage("squidInvader1.png");
     private GreenfootImage image2 = new GreenfootImage("squidInvader0.png");
     /**
+     * Constructor with params for Alien3 class.
+     * Only consists of act() method and mainly utilises methods from the parent class.
      * @param wave the current wave
-     * @param row the row the specific invader is in on screen
-     * @param startx the start X coordinate of the invader
+     * @param row the row which this alien is in 
+     * @param startx the X coordinate  of the alien in the beginning
      */
     public Alien3(int wave, int row, int startx){
         this.minXMovement = startx;
@@ -30,17 +31,17 @@ public class Alien3 extends Alien
         
         lastShotTime = getTime();
         lastMoveTime = setFirstMovementDelay(row);
-        fireChance = (int) 6 / (wave + 1);
     }
     
     /**
-     * Game-Loop for fire cooldowns and movement and checking for contact with player laser (much lower cooldowns that first invader).
+     * Loop for fire cooldowns, movement and checking for contact with playershot
+     * The cooldowns for shooting and moving are lower than those of alien1.
      */
     public void act()
     {
         if (lastMoveTime + getMovementDelay(wave) <= getTime()){
             setImage(image1);
-            moveSideToSide(minXMovement,maxXMovement);
+            alienMovement(minXMovement,maxXMovement);
             lastMoveTime = getTime();
         } else if (lastShotTime + 400 <= getTime()) {
             checkShotAndShoot(6 - wave);
@@ -49,6 +50,6 @@ public class Alien3 extends Alien
         if (lastMoveTime + 400 <= getTime()){
             setImage(image2);
         }
-        checkforLaserContact();
+        checkforShotContact();
     }
 }

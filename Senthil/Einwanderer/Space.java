@@ -2,11 +2,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 
 /**
- * MyWorld Class "Space". Controls all spawns, playerlives or Level changes
+ * This class inherits from World Class. Controls all spawns, playerLife or Level changes
  * It contains the following variables:
  * -Wave variables that stores the current wave (Starts with wave 0)
  * -grid Variables to control spawn points of enemies in aligned grid
- * -Variables for playerlives
+ * -Variables for playerLife
  * -SimpleActor Variables to display certain text on screen
  * 
  * It contains the following methods:
@@ -25,7 +25,7 @@ public class Space extends World
     private int gridspace       = 15;
     private int aliens_in_row   = 12;
     
-    private int playerLives     = 3;
+    private int playerLife     = 3;
     private ArrayList<SimpleActor> lifeCounter = new ArrayList<SimpleActor>();
 
     private SimpleActor lifeDisplay = new SimpleActor();
@@ -33,7 +33,7 @@ public class Space extends World
     private SimpleActor waveDisplay = new SimpleActor();
     
     /**
-    * first, basic constructor for Space world without params to start the first wave
+    * first, basic constructor for the world without params to start the first wave
     */
     public Space()
     {  
@@ -57,7 +57,7 @@ public class Space extends World
     }
     
     /**
-    * Act method is the main game loop. It checks for player and invader deaths and initiates the next operation accordingly
+    * Act method is the main game loop. It checks for player and enemy deaths and initiates the next operation accordingly
     */
     public void act(){
         checkForPlayerDeath();
@@ -115,10 +115,10 @@ public class Space extends World
     
     private void checkForPlayerDeath(){
         if (getObjects(Jet.class).size() == 0){
-            if (playerLives == 0){
+            if (playerLife == 0){
                 gameOver();
             } else{
-                playerLives -= 1;
+                playerLife -= 1;
                 refreshLifeCounter();               
                 playerRespawn();
             }
@@ -132,7 +132,7 @@ public class Space extends World
     }
     
     private void refreshLifeCounter(){
-        if (playerLives != lifeCounter.size()){
+        if (playerLife != lifeCounter.size()){
             removeObject(lifeCounter.get(lifeCounter.size()-1));
             lifeCounter.remove(lifeCounter.get(lifeCounter.size()-1));
         }
@@ -150,7 +150,7 @@ public class Space extends World
     }
     
     /**
-    * Gameover Method - Gets initiated when all playerlives are lost or the invaders collide with the player - Displays "game over" and ends the game.
+    * Gameover Method - Gets initiated when all playerLife are lost or the invaders collide with the player - Displays "game over" and ends the game.
     */
     public void gameOver(){
         display.setImage(new GreenfootImage("Game Over", 100, Color.RED, Color.BLACK));
@@ -164,7 +164,7 @@ public class Space extends World
     * win Method - Gets initiated when all waves are completed - Displays a big "YOU WIN" and ends the game.
     */
     public void win(){
-        display.setImage(new GreenfootImage("You win!!!!!!!!", 100, Color.GREEN, Color.BLACK));
+        display.setImage(new GreenfootImage("Winner!", 100, Color.GREEN, Color.BLACK));
         removeObjects(getObjects(enemyShot.class));
         removeObjects(getObjects(playerShot.class));
         removeObjects(getObjects(Alien.class));

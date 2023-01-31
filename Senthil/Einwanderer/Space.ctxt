@@ -1,14 +1,14 @@
 #BlueJ class context
 comment0.target=Space
-comment0.text=\r\n\ MyWorld\ Class\ "Space".\ Controls\ all\ spawns,\ playerlives\ or\ Level\ changes\r\n\ It\ contains\ the\ following\ variables\:\r\n\ -Wave\ variables\ that\ stores\ the\ current\ wave\ (Starts\ with\ wave\ 0)\r\n\ -grid\ Variables\ to\ control\ spawn\ points\ of\ enemies\ in\ aligned\ grid\r\n\ -Variables\ for\ playerlives\r\n\ -SimpleActor\ Variables\ to\ display\ certain\ text\ on\ screen\r\n\ \r\n\ It\ contains\ the\ following\ methods\:\r\n\ \r\n\ @author\ Senthil\ Nagendran\r\n\ @version\ 1.2\r\n\ \r\n\ \r\n
+comment0.text=\r\n\ This\ class\ inherits\ from\ World\ Class.\ Controls\ all\ spawns,\ playerLife\ or\ Level\ changes\r\n\ It\ contains\ the\ following\ variables\:\r\n\ -Wave\ variables\ that\ stores\ the\ current\ wave\ (Starts\ with\ wave\ 0)\r\n\ -grid\ Variables\ to\ control\ spawn\ points\ of\ enemies\ in\ aligned\ grid\r\n\ -Variables\ for\ playerLife\r\n\ -SimpleActor\ Variables\ to\ display\ certain\ text\ on\ screen\r\n\ \r\n\ It\ contains\ the\ following\ methods\:\r\n\ \r\n\ @author\ Senthil\ Nagendran\r\n\ @version\ 1.2\r\n\ \r\n\ \r\n
 comment1.params=
 comment1.target=Space()
-comment1.text=\r\n\ first,\ basic\ constructor\ for\ Space\ world\ without\ params\ to\ start\ the\ first\ wave\r\n
+comment1.text=\r\n\ first,\ basic\ constructor\ for\ the\ world\ without\ params\ to\ start\ the\ first\ wave\r\n
 comment10.params=
 comment10.target=void\ checkForNextWave()
 comment11.params=
 comment11.target=void\ gameOver()
-comment11.text=\r\n\ Gameover\ Method\ -\ Gets\ initiated\ when\ all\ playerlives\ are\ lost\ or\ the\ invaders\ collide\ with\ the\ player\ -\ Displays\ "game\ over"\ and\ ends\ the\ game.\r\n
+comment11.text=\r\n\ Gameover\ Method\ -\ Gets\ initiated\ when\ all\ playerLife\ are\ lost\ or\ the\ invaders\ collide\ with\ the\ player\ -\ Displays\ "game\ over"\ and\ ends\ the\ game.\r\n
 comment12.params=
 comment12.target=void\ win()
 comment12.text=\r\n\ win\ Method\ -\ Gets\ initiated\ when\ all\ waves\ are\ completed\ -\ Displays\ a\ big\ "YOU\ WIN"\ and\ ends\ the\ game.\r\n
@@ -17,7 +17,7 @@ comment2.target=Space(int)
 comment2.text=\r\n\ second\ contstructor\ for\ Space\ world\ with\ params\ to\ initiate\ the\ following\ waves\r\n\ @param\ wave\ Set\ to\ current-wave\ +\ 1\ to\ initiate\ a\ new\ world\ and\ a\ new\ wave\r\n
 comment3.params=
 comment3.target=void\ act()
-comment3.text=\r\n\ Act\ method\ is\ the\ main\ game\ loop.\ It\ checks\ for\ player\ and\ invader\ deaths\ and\ initiates\ the\ next\ operation\ accordingly\r\n
+comment3.text=\r\n\ Act\ method\ is\ the\ main\ game\ loop.\ It\ checks\ for\ player\ and\ enemy\ deaths\ and\ initiates\ the\ next\ operation\ accordingly\r\n
 comment4.params=
 comment4.target=void\ prepare()
 comment5.params=
