@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=UpgradeUFO
+comment0.text=\r\n\ The\ UpgradeUFO\ has\ a\ change\ to\ appear\ every\ 10\ seconds\ above\ the\ invaders\ -\ When\ it\ gets\ hit\ by\ the\ player\ -\ the\ player\ gets\ an\ upgrade\r\n\ \r\n\ @author\ Oliver\ Ammann\r\n\ @version\ 3.0\r\n
+comment1.params=
+comment1.target=UpgradeUFO()
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ Method\ moves\ the\ ship\ from\ left\ to\ right\ and\ checks\ for\ contacts\ with\ edge\ or\ player\ shot\r\n
+comment3.params=
+comment3.target=void\ checkForContact()
+comment3.text=\r\n\ Checks\ for\ edge-contact\ or\ contact\ with\ player\ shot\ and\ reacts\r\n
+numComments=4
