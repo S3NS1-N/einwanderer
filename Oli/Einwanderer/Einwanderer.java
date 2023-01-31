@@ -23,9 +23,11 @@ public class Einwanderer extends Actor
         if ((getX() == maxXMovement && leftOrRight == 1) || (getX() == minXMovement && leftOrRight == -1)){
             setLocation(getX(), getY() + 20);
             leftOrRight *= -1;
+            Greenfoot.playSound("invaderStepSound.wav");
         } else {
             setLocation(getX() + stepSize * leftOrRight, getY());
         }
+        
     }
     
     /**
@@ -38,7 +40,7 @@ public class Einwanderer extends Actor
             setImage("invaderExplosion.png");
             Greenfoot.playSound("invaderDestroyedSound.wav");
             
-            Greenfoot.delay(2);
+            Greenfoot.delay(3);
             getWorld().removeObject(this);
         }
     }
@@ -71,7 +73,7 @@ public class Einwanderer extends Actor
     * This method returns the movement delay of the wave for the invaders.
     */
     public int getMovementDelay(int wave){
-        return movementDelay - (wave * 800);
+        return movementDelay - (wave * 600);
     }
     
     /**

@@ -30,11 +30,11 @@ public class EinwandererThree extends Einwanderer
         
         lastShotTime = getTime();
         lastMoveTime = setFirstMovementDelay(row);
-        fireChance = (int) 6 / (wave + 1);
+        fireChance = 5 - wave;
     }
     
     /**
-     * Game-Loop for fire cooldowns and movement and checking for contact with player laser (much lower cooldowns that first invader).
+     * Game-Loop for fire cooldowns and movement and checking for contact with player laser (much lower cooldowns than first invader).
      */
     public void act()
     {
@@ -43,7 +43,7 @@ public class EinwandererThree extends Einwanderer
             moveSideToSide(minXMovement,maxXMovement);
             lastMoveTime = getTime();
         } else if (lastShotTime + 400 <= getTime()) {
-            checkShotAndShoot(6 - wave);
+            checkShotAndShoot(fireChance);
             lastShotTime = getTime();   
         }
         if (lastMoveTime + 400 <= getTime()){

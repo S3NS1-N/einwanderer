@@ -31,7 +31,7 @@ public class EinwandererTwo extends Einwanderer
         
         lastMoveTime = setFirstMovementDelay(row);
         lastShotTime = getTime();
-        fireChance = (int) 8 / (wave + 1);
+        fireChance = 6 - wave;
     }
     
     /**
@@ -44,7 +44,7 @@ public class EinwandererTwo extends Einwanderer
             moveSideToSide(minXMovement, maxXMovement);
             lastMoveTime = getTime();
         } else if (lastShotTime + 600 <= getTime()){
-            checkShotAndShoot(7 - wave);
+            checkShotAndShoot(fireChance);
             lastShotTime = getTime();
         }
         if (lastMoveTime + 400 <= getTime()){

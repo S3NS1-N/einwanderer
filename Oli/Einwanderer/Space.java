@@ -19,6 +19,7 @@ import java.util.*;
 public class Space extends World
 {
     private int wave;
+    private long timeCache;
     
     private int gridxstart      = 15;
     private int gridystart      = 30;
@@ -40,6 +41,7 @@ public class Space extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(255, 200, 3);
         wave = 0; //1
+        timeCache = getTime();
         
         prepare();
     }
@@ -52,6 +54,7 @@ public class Space extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(255, 200, 3);
         this.wave = wave;
+        timeCache = getTime();
         
         prepare();
     }
@@ -62,6 +65,7 @@ public class Space extends World
     public void act(){
         checkForPlayerDeath();
         checkForNextWave();
+        spawnUpgradeUFO();
     }
     
     private void prepare(){
@@ -71,6 +75,10 @@ public class Space extends World
         
         waveDisplay.setImage(new GreenfootImage("Wave: " + (wave + 1), 25, Color.WHITE, Color.BLACK));
         addObject(waveDisplay, 240, 5);
+        
+        if (wave > 0){
+            Greenfoot.delay(10);
+        }
     }
     
     private void AlienSpawnControl(){
@@ -127,6 +135,7 @@ public class Space extends World
     private void playerRespawn(){
         removeObjects(getObjects(Alaser.class));
         removeObjects(getObjects(Plaser.class));
+        removeObjects(getObjects(UpgradeUFO.class));
         addObject(new Ship(), 125, 180);
         Greenfoot.delay(10);
     }
@@ -140,10 +149,16 @@ public class Space extends World
     
     private void checkForNextWave(){
         if (getObjects(Einwanderer.class).size() == 0){ 
-            if (wave == 2){
+            if (wave == 3){
                 win();    
             } else {
-                Greenfoot.setWorld(new Space(wave + 1));    
+                removeObjects(getObjects(Alaser.class));
+                removeObjects(getObjects(Plaser.class));
+                removeObjects(getObjects(UpgradeUFO.class));
+                
+                getObjects(Ship.class).get(0).warp();
+                Greenfoot.setWorld(new Space(wave + 1));
+                
             }
             
         }
@@ -157,6 +172,7 @@ public class Space extends World
         removeObjects(getObjects(Alaser.class));
         removeObjects(getObjects(Plaser.class));
         addObject(display, 126, 100);
+        Greenfoot.playSound("lost.mp3");
         Greenfoot.delay(10);
         Greenfoot.stop();
     }
@@ -170,8 +186,18 @@ public class Space extends World
         removeObjects(getObjects(Einwanderer.class));
              
         addObject(display, 126, 100);
+        Greenfoot.playSound("win.mp3");
         Greenfoot.delay(10);
         Greenfoot.stop();
+    }
+    private void spawnUpgradeUFO(){
+        if (Greenfoot.getRandomNumber(5) == Greenfoot.getRandomNumber(5) && timeCache + 10000 <= getTime()){
+            addObject(new UpgradeUFO(), 0, 20);
+            timeCache = getTime();
+        }
+    }
+    private long getTime(){
+        return System.currentTimeMillis();
     }
 }
 

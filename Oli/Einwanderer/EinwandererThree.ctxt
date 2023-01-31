@@ -1,9 +1,10 @@
 #BlueJ class context
 comment0.target=EinwandererThree
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ EinwandererThree\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ This\ class\ is\ the\ class\ of\ the\ third\ kind\ of\ invader.\ It\ just\ contains\ the\ act()\ method\ and\ mainly\ utilises\ methods\ from\ the\ parent\ class\r\n\ \r\n\ @author\ Oliver\ Ammann\r\n\ @version\ 3.0\r\n
 comment1.params=wave\ row\ startx
 comment1.target=EinwandererThree(int,\ int,\ int)
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ EinwandererThree\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.text=\r\n\ @param\ wave\ the\ current\ wave\r\n\ @param\ row\ the\ row\ the\ specific\ invader\ is\ in\ on\ screen\r\n\ @param\ startx\ the\ start\ X\ coordinate\ of\ the\ invader\r\n
 comment2.params=
 comment2.target=void\ act()
+comment2.text=\r\n\ Game-Loop\ for\ fire\ cooldowns\ and\ movement\ and\ checking\ for\ contact\ with\ player\ laser\ (much\ lower\ cooldowns\ than\ first\ invader).\r\n
 numComments=3

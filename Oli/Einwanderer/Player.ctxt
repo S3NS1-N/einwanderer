@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=Player
-comment0.text=\r\n\ Parent\ class\ of\ player-ship.\ Contains\ useful\ functions\ for\ the\ player\ class.\ Kind\ of\ unecessary\ at\ the\ moment.\r\n\ \r\n\ @author\ Oliver\ Ammann\r\n\ @version\ 3.0\r\n
-comment1.params=
-comment1.target=long\ getTime()
-comment1.text=\r\n\ Returns\ the\ current\ time\ in\ milliseconds\r\n
-numComments=2

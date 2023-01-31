@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Alaser: Player-Laser Class - Just moves and checks for edge collisions
+ * Plaser: Player-Laser Class - Just moves and checks for edge collisions
  * 
  * @author Oliver Ammann
  * @version 3.0
@@ -12,8 +12,7 @@ public class Plaser extends Actor
         
     }
     /**
-     * Act - do whatever the Plaser wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Act - Just moves the laser and checks for Edge-Contact
      */
     public void act()
     {
