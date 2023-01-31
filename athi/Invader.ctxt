@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Invader
+comment0.text=\r\n\ Parent\ Class\ for\ all\ "Invaders".\ Includes\ common\ functions\ that\ all\ invaders\ use,\ such\ as\ moving\ and\ shooting.\r\n\ \r\n\ @author\ Athavan\ Ranganathan\r\n\ @version\ 3.0\r\n
+comment1.params=minXMovement\ maxXMovement
+comment1.target=void\ moveLeftRight(int,\ int)
+comment1.text=\r\n\ this\ method\ does\ the\ following\:\ moves\ the\ invaders\ (left/right).\ if\ the\ max\ or\ min\ x\ cooridate\ is\ reached,\ they\ are\ moved\ one\ row\ down\ and\ switch\ to\ the\ opposite\ direction.\r\n\ @param\ minXMovement\ The\ start\ /\ minimum\ Position\ of\ the\ invader.\r\n\ @param\ maxXMovement\ The\ maximum\ X\ Coordinate\ of\ the\ invader\ (minXMovement\ +\ 60).\r\n
+comment2.params=minXMovement
+comment2.target=int\ getMaxGalaxyXMovement(int)
+comment2.text=\r\n\ this\ method\ does\ the\ following\:\ returns\ the\ maximum\ X\ coordinate\ using\ the\ start\ X\ position.\r\n
+comment3.params=
+comment3.target=long\ getTime()
+comment3.text=\r\n\ this\ method\ does\ the\ following\:\ returns\ the\ time\ in\ ms.\r\n
+comment4.params=wave
+comment4.target=int\ getMovementGalaxyDelay(int)
+comment4.text=\r\n\ this\ method\ does\ the\ following\:\ returns\ the\ movement\ delay\ (wave)\ for\ the\ invaders.\r\n
+comment5.params=row
+comment5.target=long\ setFirstMovementGalaxyDelay(int)
+comment5.text=\r\n\ this\ method\ does\ the\ following\:\ returns\ the\ first\ movement\ delay\ (every\ invaders\ row)\r\n
+comment6.params=
+comment6.target=void\ checkforLaserContact()
+comment6.text=\r\n\ this\ method\ does\ the\ following\:\ checks\ if\ there\ is\ a\ contact\ between\ the\ plaser\ and\ an\ invader.\ if\ yes,\ this\ invader\ is\ removed.\r\n
+comment7.params=chance
+comment7.target=void\ verifyNshoot(int)
+comment7.text=\r\n\ this\ method\ does\ the\ following\:\ checks\ if\ the\ invader\ is\ allowed\ to\ shoot.\ if\ yes,\ he\ shoots.\ the\ shots\ are\ shot\ randomly\r\n
+numComments=8

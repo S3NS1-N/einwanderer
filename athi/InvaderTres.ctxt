@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=InvaderTres
+comment0.text=\r\n\ "third"\ invader\ class.\ this\ class\ uses\ primarily\ the\ methods\ from\ the\ parant\ class.\ it\ contains\ just\ the\ following\ method\:\ act()\r\n\ \r\n\ @author\ Athavan\ Ranganathan\r\n\ @version\ 3.0\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ this\ (main)\ method\ does\ the\ following\:\ check\ for\ contact\ with\ plaser,\ movement\ and\ cooldowns\ (loop).\ the\ diffrence\ to\ the\ first\ invader\ is\ the\ lower\ cooldown.\r\n
+comment2.params=wave\ row\ startx
+comment2.target=InvaderTres(int,\ int,\ int)
+comment2.text=\r\n\ @param\ wave\ the\ current\ wave\r\n\ @param\ row\ the\ row\ the\ specific\ invader\ is\ in\ on\ screen\r\n\ @param\ startx\ the\ start\ X\ coordinate\ of\ the\ invader\r\n
+numComments=3
