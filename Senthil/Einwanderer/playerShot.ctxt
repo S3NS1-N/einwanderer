@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=playerShot
+comment0.text=\r\n\ Alaser\:\ Player-Laser\ Class\ -\ Just\ moves\ and\ checks\ for\ edge\ collisions\r\n\ \r\n\ @author\ Senthil\ Nagendran\r\n\ @version\ 1.2\r\n
+comment1.params=
+comment1.target=playerShot()
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Plaser\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.params=
+comment3.target=void\ checkEdgeContact()
+numComments=4

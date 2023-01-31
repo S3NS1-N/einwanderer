@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Alien
+comment0.text=\r\n\ Parent\ Class\ for\ all\ "Invaders".\ Contains\ common\ functions\ that\ all\ invaders\ use,\ like\ moving\ and\ shooting.\r\n\ \r\n\ @author\ Senthil\ Nagendran\r\n\ @version\ 1.2\r\n
+comment1.params=minXMovement\ maxXMovement
+comment1.target=void\ moveSideToSide(int,\ int)
+comment1.text=\r\n\ This\ method\ moves\ the\ invaders\ from\ side\ to\ side\ and\ checks\ if\ the\ reached\ the\ maximum\ or\ minimum\ X\ Coordinate\ and\ move\ one\ row\ down\ and\ change\ direction.\r\n\ @param\ minXMovement\ The\ start\ /\ minimum\ Position\ of\ the\ invader.\r\n\ @param\ maxXMovement\ The\ maximum\ X\ Coordinate\ of\ the\ invader\ (minXMovement\ +\ 60).\r\n
+comment2.params=
+comment2.target=void\ checkforLaserContact()
+comment2.text=\r\n\ This\ method\ checks\ for\ contact\ with\ player-laser-shot\ and\ removes\ the\ invader\ if\ necessary.\r\n
+comment3.params=chance
+comment3.target=void\ checkShotAndShoot(int)
+comment3.text=\r\n\ This\ method\ checks\ if\ an\ Invader\ is\ able\ to\ shoot\ (randomized)\ and\ fires\ if\ true.\r\n
+comment4.params=minXMovement
+comment4.target=int\ getMaxXMovement(int)
+comment4.text=\r\n\ This\ method\ returns\ the\ maximum\ X\ coordinate\ with\ the\ help\ of\ the\ start\ X\ position.\r\n
+comment5.params=
+comment5.target=long\ getTime()
+comment5.text=\r\n\ This\ method\ returns\ the\ time\ in\ Milliseconds\r\n
+comment6.params=wave
+comment6.target=int\ getMovementDelay(int)
+comment6.text=\r\n\ This\ method\ returns\ the\ movement\ delay\ of\ the\ wave\ for\ the\ invaders.\r\n
+comment7.params=row
+comment7.target=long\ setFirstMovementDelay(int)
+comment7.text=\r\n\ This\ method\ returns\ the\ first\ movement\ delay\ for\ each\ row\ of\ invaders\ (they\ move\ a\ little\ async)\r\n
+numComments=8
