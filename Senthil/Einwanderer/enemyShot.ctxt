@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=enemyShot
-comment0.text=\r\n\ enemyShot\:\ Alien-Laser\ Class\ -\ Just\ moves\ and\ checks\ for\ edge\ collisions\r\n\ \r\n\ @author\ Senthil\ Nagendran\r\n\ @version\ 1.2\r\n
+comment0.text=\r\n\ This\ class\ inherits\ from\ Actor\ class.\r\n\ Checks\ if\ the\ bullet's\ touching\ the\ edge\ and\ moves\ forward.\r\n\ \r\n\ @author\ Senthil\ Nagendran\r\n\ @version\ 1.2\r\n
 comment1.params=
 comment1.target=enemyShot()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ enemyShot\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.text=\r\n\ This\ method\ is\ called\ when\ the\ 'Act'\ or\ 'Run'\ button\ \r\n\ is\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
