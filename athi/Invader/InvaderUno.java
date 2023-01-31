@@ -42,7 +42,7 @@ public class InvaderUno extends Invader
     /**
 
      * @param wave the current wave
-     * @param row the row the specific invader is in on screen
+     * @param row the row the invader is in
      * @param startx the start X coordinate of the invader
      */
     public InvaderUno(int wave, int row, int startx){

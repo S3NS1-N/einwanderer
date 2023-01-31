@@ -6,5 +6,5 @@ comment1.target=void\ act()
 comment1.text=\r\n\ this\ (main)\ method\ does\ the\ following\:\ check\ for\ contact\ with\ plaser,\ movement\ and\ cooldowns\ (loop).\r\n
 comment2.params=wave\ row\ startx
 comment2.target=InvaderUno(int,\ int,\ int)
-comment2.text=\r\n\r\n\ @param\ wave\ the\ current\ wave\r\n\ @param\ row\ the\ row\ the\ specific\ invader\ is\ in\ on\ screen\r\n\ @param\ startx\ the\ start\ X\ coordinate\ of\ the\ invader\r\n
+comment2.text=\r\n\r\n\ @param\ wave\ the\ current\ wave\r\n\ @param\ row\ the\ row\ the\ invader\ is\ in\r\n\ @param\ startx\ the\ start\ X\ coordinate\ of\ the\ invader\r\n
 numComments=3
