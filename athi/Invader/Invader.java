@@ -74,7 +74,7 @@ public class Invader extends Actor
      * this method does the following: checks if the invader is allowed to shoot. if yes, he shoots. the shots are shot randomly
      */
     public void verifyNshoot(int chance){
-        if (getObjectsAtOffset(0, 20, Invader.class).size() == 0 && getObjectsAtOffset(10 * LeftnRight, 20, Invader.class).size() == 0 && getObjectsAtOffset(10 * LeftnRight, 40, Invader.class).size() == 0 && Greenfoot.getRandomNumber(chance) == 1){
+        if (getObjectsAtOffset(0, 20, Invader.class).size() == 0 && Greenfoot.getRandomNumber(chance) == 1){
             IVLaser laser = new IVLaser();
             getWorld().addObject(laser,getX(), getY() + 2);
         }

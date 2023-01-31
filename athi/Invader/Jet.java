@@ -47,7 +47,7 @@ public class Jet extends Player {
         }
     }
     private void fire(){
-        if (Greenfoot.isKeyDown("space") && lastShotTime  <= getTime()){
+        if (Greenfoot.isKeyDown("space") && lastShotTime + cooldown <= getTime()){
             JLaser laser = new JLaser();
             getWorld().addObject(laser,getX(), getY() - 2);
             lastShotTime = getTime();
@@ -57,8 +57,7 @@ public class Jet extends Player {
     }
     
     public Jet(){
-        lastShotTime = -1200;
-        cooldown = 1200;
+        cooldown = 1000;
     } 
 
     private void checkForLaserContact(){
