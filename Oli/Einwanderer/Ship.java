@@ -49,7 +49,6 @@ public class Ship extends Actor {
                     Plaser laser2 = new Plaser();
                     getWorld().addObject(laser1,getX() + 2, getY() - 2);
                     getWorld().addObject(laser2,getX() - 2, getY() - 2);
-                    lastShotTime = getTime();
                 } else {
                     upgrade = false;
                 }
@@ -59,10 +58,10 @@ public class Ship extends Actor {
                 
                 Plaser laser = new Plaser();
                 getWorld().addObject(laser,getX(), getY() - 2);
-                lastShotTime = getTime();
                 
                 shot.play();
             }
+            //lastShotTime = getTime();
         }
     }
     private void checkForLaserContact(){
