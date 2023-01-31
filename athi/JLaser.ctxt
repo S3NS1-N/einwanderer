@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=JLaser
+comment0.text=\r\n\ Plaser\ (Player-Laser)\ Class\:\ only\ does\ these\ two\ methods\ -->\ moves/look\ for\ Edge\ and\ checks\ for\ a\ collisions\ between\ Jet\ and\ Invader\r\n\ \r\n\ @author\ Athavan\ Ranganathan\r\n\ @version\ 3.0\r\n
+comment1.params=
+comment1.target=JLaser()
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ this\ method\ is\ only\ executed\ when\ the\ "act"\ or\ "run"\ button\ is\ pressed\r\n
+comment3.params=
+comment3.target=void\ lookForEdge()
+numComments=4
